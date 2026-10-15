@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07162e">
+<title>Nguyên tố & Cuộc sống | Dự án Hóa 10</title>
+<style>
+:root{--bg:#07162e;--panel:#0d2242;--panel2:#102b50;--line:rgba(151,197,255,.18);--text:#edf6ff;--muted:#a9bfdc;--cyan:#67e8f9;--blue:#60a5fa;--violet:#a78bfa;--green:#6ee7b7;--gold:#fbbf24;--pink:#f9a8d4;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#153a68 0,transparent 38%),radial-gradient(ellipse at 95% 25%,#20265c 0,transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(7,22,46,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:-.4px}.brandmark{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#08203d;font-size:20px;box-shadow:0 0 28px #67e8f944}.navlinks{display:flex;gap:22px;color:var(--muted);font-size:14px}.navlinks a:hover{color:var(--cyan)}.menu{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 12px}
+.hero{padding:76px 0 46px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:400px;height:400px;border:1px solid #67e8f91a;border-radius:50%;right:-110px;top:10px;box-shadow:0 0 0 35px #67e8f909,0 0 0 75px #67e8f905;pointer-events:none}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #67e8f944;background:#67e8f910;color:var(--cyan);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}.heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:35px;align-items:center}.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.03;letter-spacing:-2.8px;margin:22px 0 18px;max-width:780px}.gradient{background:linear-gradient(90deg,#fff,var(--cyan),#a5b4fc);color:transparent;background-clip:text}.hero p{color:var(--muted);font-size:17px;max-width:650px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.btn{border:1px solid var(--line);padding:12px 18px;border-radius:13px;background:#ffffff08;color:var(--text);font-weight:750;transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#67e8f988}.btn.primary{background:linear-gradient(135deg,var(--cyan),#60a5fa);color:#06203a;border:0;box-shadow:0 8px 30px #38bdf833}.atomCard{position:relative;min-height:310px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(145deg,#132f55cc,#091a34ee);display:grid;place-items:center;overflow:hidden;box-shadow:0 25px 80px #0003}.atom{width:220px;height:220px;position:relative;animation:float 5s ease-in-out infinite}.nucleus{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#fff,var(--cyan) 28%,#2563eb 70%);box-shadow:0 0 35px #67e8f988}.orbit{position:absolute;inset:20px;border:1.5px solid #67e8f9aa;border-radius:50%;transform:rotate(0deg) scaleY(.42)}.orbit.o2{transform:rotate(60deg) scaleY(.42);border-color:#a78bfa99}.orbit.o3{transform:rotate(-60deg) scaleY(.42);border-color:#60a5fa99}.electron{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold);left:15px;top:100px}.atomCaption{position:absolute;bottom:20px;text-align:center;color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.stat{padding:15px;border:1px solid var(--line);background:#ffffff05;border-radius:16px}.stat strong{display:block;font-size:24px;color:var(--cyan)}.stat span{font-size:12px;color:var(--muted)}
+section{padding:52px 0;scroll-margin-top:80px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:24px}.kicker{color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:1.5px;text-transform:uppercase}.sectionHead h2{font-size:clamp(27px,4vw,40px);line-height:1.12;letter-spacing:-1px;margin:7px 0}.sectionHead p{color:var(--muted);max-width:570px;margin:0}.glass{background:linear-gradient(145deg,#102746dd,#0a1d38ee);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 45px #0002}.periodicShell{padding:20px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:17px}.search{flex:1;min-width:190px;border:1px solid var(--line);background:#06152b;color:var(--text);padding:11px 14px;border-radius:12px;outline:none}.search:focus{border-color:var(--cyan)}.filter{border:1px solid var(--line);border-radius:12px;background:#102846;color:var(--text);padding:10px 12px}.legend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.legend span{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+/* Cấu trúc Bảng tuần hoàn 18 cột chuẩn */
+.periodic{--cell-w:58px;--cell-h:66px;display:grid;grid-template-columns:repeat(18,minmax(var(--cell-w),1fr));gap:5px;overflow-x:auto;padding-bottom:8px;align-items:stretch}
+.el{width:100%;height:var(--cell-h);min-width:0;border:1px solid var(--line);border-radius:10px;background:#142e50;display:grid;grid-template-rows:12px 1fr 10px;align-items:center;justify-items:center;position:relative;transition:transform .18s,border-color .18s,box-shadow .18s,opacity .18s;padding:3px 3px 2px;color:var(--text);overflow:hidden}
+.el:hover:not(.empty),.el:focus-visible:not(.empty){transform:translateY(-3px) scale(1.04);border-color:var(--cyan);box-shadow:0 8px 20px #0005;z-index:2;outline:none}
+.el .num{width:100%;font-size:8px;line-height:1;justify-self:start;padding-left:2px;color:#c0d2e8}
+.el .sym{display:grid;place-items:center;width:100%;height:100%;font-weight:900;font-size:clamp(15px,1.5vw,22px);line-height:1;letter-spacing:-.05em;color:var(--text);text-align:center}
+.el .mass{font-size:7px;line-height:1;color:#bfd0e4;text-align:center;justify-self:center;align-self:end}
+
+/* Ô trống (không có nguyên tố ở trên) -> làm tối đi và vô hiệu hóa */
+.el.empty{visibility:visible;pointer-events:none;cursor:default;background:rgba(4,14,28,.4);border:1px dashed rgba(151,197,255,.08);opacity:0.25}
+
+/* Phân loại nguyên tố */
+.el.nonmetal{background:linear-gradient(145deg,#164e63,#12334d);border-color:#67e8f933}
+.el.noble{background:linear-gradient(145deg,#44356d,#24274e);border-color:#a78bfa55}
+.el.metalloid{background:linear-gradient(145deg,#59451f,#302b2c);border-color:#fbbf2455}
+.el.metal{background:linear-gradient(145deg,#1c4779,#183052);border-color:#60a5fa44}
+.el.selected{outline:2px solid var(--cyan);outline-offset:1px}
+
+.elementDetail{margin-top:18px;display:grid;grid-template-columns:180px 1fr;gap:20px;padding:20px;background:#06152b99;border:1px solid var(--line);border-radius:18px}.detailSymbol{display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:16px;min-height:155px;background:linear-gradient(145deg,#164e63,#1c4779)}.detailSymbol strong{font-size:56px;line-height:1;color:var(--element-accent,var(--cyan));text-shadow:0 0 22px color-mix(in srgb,var(--element-accent,var(--cyan)) 48%,transparent)}.detailSymbol>span{font-size:12px;color:var(--element-accent,#d2e6f8);margin-top:7px}.detailContent h3{margin:0;font-size:25px}.detailContent p{margin:6px 0 13px;color:var(--muted)}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:11px;color:#cde4fb;background:#ffffff06}.detailFacts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:13px}.fact{padding:10px 12px;background:#ffffff05;border-radius:11px;border:1px solid #ffffff0b}.fact small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.7px}.fact b{font-size:13px}
+
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{padding:20px;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-4px);border-color:#67e8f955}.iconBox{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#67e8f91a;color:var(--cyan);font-size:21px;margin-bottom:14px}.card h3{margin:0 0 8px;font-size:17px}.card p{color:var(--muted);font-size:13px;margin:0}.card .tag{display:inline-block;margin-top:14px;color:var(--cyan);font-size:11px;font-weight:800}.profileGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.profile{padding:19px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;text-align:left;color:var(--text);width:100%;background:linear-gradient(145deg,#102746dd,#0a1d38ee);border:1px solid var(--line);border-radius:18px;transition:.2s}.profile:hover{transform:translateY(-3px);border-color:#67e8f988}.profile .psym{flex:0 0 54px;height:58px;border-radius:13px;display:grid;place-items:center;background:#164e63;font-size:25px;font-weight:900;color:var(--cyan)}.profile b{display:block;margin:2px 0 3px}.profile small{color:var(--muted);font-size:12px}.profile em{display:block;color:#cde5fa;font-size:12px;font-style:normal;margin-top:8px}
+.quizLayout{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px}.quizIntro{padding:25px}.quizIntro h3{font-size:24px;line-height:1.2;margin:10px 0}.quizIntro p{color:var(--muted);font-size:14px}.quizBox{padding:25px}.quizTop{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.progress{height:5px;border-radius:10px;background:#ffffff12;margin:12px 0 22px;overflow:hidden}.progress div{height:100%;background:linear-gradient(90deg,var(--cyan),var(--violet));width:0;transition:width .3s}.question{font-size:20px;font-weight:800;line-height:1.35;margin-bottom:18px}.answers{display:grid;gap:9px}.answer{width:100%;text-align:left;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:#ffffff05;color:var(--text);transition:.15s}.answer:hover:not(:disabled){border-color:var(--cyan);background:#67e8f90d}.answer.correct{border-color:#34d399;background:#10b98119}.answer.wrong{border-color:#fb7185;background:#fb718515}.feedback{min-height:25px;margin-top:12px;font-size:13px;color:var(--muted)}.quizActions{display:flex;justify-content:space-between;align-items:center;margin-top:15px;gap:12px}.score{font-weight:850;color:var(--cyan)}.aboutGrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.aboutBox{padding:24px}.aboutBox h3{margin-top:0}.aboutBox p,.aboutBox li{color:var(--muted);font-size:14px}.aboutBox ul{padding-left:20px}.qrGrid{display:grid;grid-template-columns:1fr .7fr;gap:18px}.steps{display:grid;gap:13px}.step{display:flex;gap:13px}.stepNo{width:30px;height:30px;flex:0 0 30px;border-radius:10px;background:#67e8f91a;color:var(--cyan);display:grid;place-items:center;font-weight:900}.step h4{margin:0 0 3px}.step p{margin:0;color:var(--muted);font-size:13px}.qrPreview{padding:22px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}.qrPreview img{width:170px;height:170px;max-width:100%;background:white;padding:8px;border-radius:12px;display:none}.qrPlaceholder{width:170px;height:170px;border:1px dashed #67e8f966;border-radius:12px;display:grid;place-items:center;color:var(--cyan);font-size:50px;margin-bottom:12px}.qrPreview p{color:var(--muted);font-size:12px}.qrInput{width:100%;margin:8px 0;border:1px solid var(--line);background:#06152b;color:var(--text);padding:10px;border-radius:10px}.footer{padding:30px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.footerIn{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#dffcff;color:#08203a;padding:11px 17px;border-radius:12px;font-size:13px;font-weight:800;box-shadow:0 10px 40px #0005;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}.fade{animation:fadeUp .6s both}@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}@keyframes float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+
+@media(max-width:900px){.heroGrid{grid-template-columns:1fr .7fr}.grid3{grid-template-columns:repeat(2,1fr)}.profileGrid{grid-template-columns:repeat(2,1fr)}.periodicShell{padding:12px}.periodic{--cell-w:46px}.quizLayout{grid-template-columns:1fr}.qrGrid{grid-template-columns:1fr}.navlinks{gap:12px}}
+@media(max-width:640px){.navin{height:62px}.navlinks{display:none;position:absolute;top:61px;left:0;right:0;background:#091a34;padding:15px 5%;border-bottom:1px solid var(--line);flex-direction:column}.navlinks.open{display:flex}.menu{display:block}.hero{padding:48px 0 25px}.heroGrid{grid-template-columns:1fr}.hero h1{font-size:44px;letter-spacing:-1.8px}.hero p{font-size:15px}.atomCard{min-height:240px}.atom{transform:scale(.8)}.stats{gap:8px}.stat{padding:11px}.stat strong{font-size:20px}.stat span{font-size:10px}.sectionHead{display:block}.sectionHead p{margin-top:9px}.elementDetail{grid-template-columns:1fr}.detailSymbol{min-height:130px}.detailFacts{grid-template-columns:1fr 1fr}.grid3,.profileGrid,.aboutGrid{grid-template-columns:1fr}.periodicShell{padding:10px}.quizIntro,.quizBox,.aboutBox{padding:18px}.periodic{--cell-w:38px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin">
+  <a class="brand" href="#home"><span class="brandmark">⚛</span><span>NGUYÊN TỐ <span style="color:var(--cyan)">&</span> CUỘC SỐNG</span></a>
+  <nav class="navlinks" id="navlinks"><a href="#bang">Bảng tuần hoàn</a><a href="#khampha">Ứng dụng</a><a href="#hoso">Hồ sơ nguyên tố</a><a href="#quiz">Thử thách</a><a href="#duan">Dự án</a></nav>
+  <button class="menu" id="menuBtn" aria-label="Mở menu">☰</button>
+</div></header>
+<main id="home">
+<section class="hero"><div class="wrap heroGrid">
+  <div class="fade"><span class="eyebrow">✦ DỰ ÁN HỌC TẬP · HÓA HỌC 10</span>
+    <h1>BẢNG TUẦN HOÀN<br><span class="gradient">TỪ NGUYÊN TỐ</span><br>ĐẾN CUỘC SỐNG</h1>
+    <p>Khám phá những nguyên tố hóa học tạo nên thế giới quanh ta — từ hơi thở, vật dụng đến các tòa nhà và công nghệ hiện đại.</p>
+    <div class="actions"><a class="btn primary" href="#bang">Khám phá bảng tuần hoàn ↗</a><a class="btn" href="#duan">Tìm hiểu dự án</a></div>
+    <div class="stats"><div class="stat"><strong>18</strong><span>Nguyên tố khám phá</span></div><div class="stat"><strong>06</strong><span>Hồ sơ chuyên sâu</span></div><div class="stat"><strong>100%</strong><span>Tương tác trực tiếp</span></div></div>
+  </div>
+  <div class="atomCard fade"><div class="atom"><div class="orbit"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="electron"></div><div class="nucleus"></div></div><div class="atomCaption">Vật Chất · Khoa Học · Đời Sống</div></div>
+</div></section>
+
+<section id="bang"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">01 / Khám phá</div><h2>Bảng tuần hoàn tương tác</h2></div><p>Chọn một ô nguyên tố có sẵn để xem thông tin. Tìm kiếm theo tên, kí hiệu hoặc số hiệu nguyên tử; dùng bộ lọc để khám phá từng nhóm.</p></div>
+  <div class="glass periodicShell">
+    <div class="tools"><input class="search" id="searchEl" placeholder="⌕  Tìm nguyên tố: O, Oxygen, 8,..." aria-label="Tìm nguyên tố"><select class="filter" id="filterEl" aria-label="Lọc nguyên tố"><option value="all">Tất cả nhóm</option><option value="nonmetal">Phi kim</option><option value="metal">Kim loại</option><option value="metalloid">Á kim</option><option value="noble">Khí hiếm</option></select><button class="btn" id="resetEl">Đặt lại</button></div>
+    <div class="legend"><span><i class="dot" style="background:#67e8f9"></i> Phi kim</span><span><i class="dot" style="background:#60a5fa"></i> Kim loại</span><span><i class="dot" style="background:#fbbf24"></i> Á kim</span><span><i class="dot" style="background:#a78bfa"></i> Khí hiếm</span></div>
+    
+    <!-- Lưới bảng tuần hoàn 18 cột chuẩn -->
+    <div class="periodic" id="periodic" aria-label="Bảng tuần hoàn các nguyên tố"></div>
+    
+    <div class="elementDetail" id="elementDetail" aria-live="polite"></div>
+  </div>
+</div></section>
+
+<section id="khampha"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">02 / Kết nối thực tế</div><h2>Hóa học ở quanh ta</h2></div><p>Mỗi ứng dụng đều bắt đầu từ một tính chất. Hiểu được mối liên hệ đó giúp ta thấy bảng tuần hoàn không chỉ là những ô vuông.</p></div>
+  <div class="grid3">
+    <article class="glass card"><div class="iconBox">🫁</div><h3>Hô hấp & sức khỏe</h3><p>Oxi cần thiết cho hô hấp tế bào. Một số hợp chất của flo được dùng trong sản phẩm chăm sóc răng miệng với lượng phù hợp.</p><span class="tag">O · F · Ca</span></article>
+    <article class="glass card"><div class="iconBox">⚡</div><h3>Năng lượng & điện</h3><p>Đồng dẫn điện tốt nên thường được dùng làm dây dẫn. Liti là thành phần quan trọng trong nhiều loại pin sạc.</p><span class="tag">Cu · Li · C</span></article>
+    <article class="glass card"><div class="iconBox">🏙️</div><h3>Xây dựng & vật liệu</h3><p>Sắt được dùng để sản xuất thép; nhôm nhẹ và có lớp oxit bảo vệ; silic là nguyên liệu quan trọng trong sản xuất thủy tinh.</p><span class="tag">Fe · Al · Si</span></article>
+    <article class="glass card"><div class="iconBox">🌱</div><h3>N nông nghiệp</h3><p>Nitơ và photpho là các nguyên tố dinh dưỡng thiết yếu của cây, thường được cung cấp qua những loại phân bón phù hợp.</p><span class="tag">N · P · K</span></article>
+    <article class="glass card"><div class="iconBox">📱</div><h3>Công nghệ số</h3><p>Silic được dùng để chế tạo linh kiện bán dẫn. Nhiều thiết bị điện tử còn cần đồng và các vật liệu chứa nhiều nguyên tố khác.</p><span class="tag">Si · Cu · Au</span></article>
+    <article class="glass card"><div class="iconBox">💡</div><h3>Ánh sáng & không khí</h3><p>Neon có thể tạo ánh sáng đặc trưng trong đèn phóng điện; heli là khí nhẹ được dùng trong một số loại bóng bay.</p><span class="tag">Ne · He · Ar</span></article>
+  </div>
+</div></section>
+
+<section id="hoso"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">03 / Hồ sơ nguyên tố</div><h2>Sáu nguyên tố tiêu biểu</h2></div><p>Mỗi hồ sơ gồm vị trí, cấu hình electron, phân loại, tính chất và ứng dụng. Chọn một hồ sơ để xem đầy đủ.</p></div>
+  <div class="profileGrid" id="profileGrid"></div>
+  <div class="glass aboutBox" id="profileExpanded" style="margin-top:16px"><div class="kicker">HỒ SƠ CHI TIẾT</div><h3 id="profileTitle">Chọn một nguyên tố để bắt đầu</h3><div id="profileBody" style="color:var(--muted)">Thông tin chi tiết sẽ hiển thị tại đây.</div></div>
+</div></section>
+
+<section id="quiz"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">04 / Kiểm tra kiến thức</div><h2>Thử thách nhà hóa học</h2></div><p>Trả lời câu hỏi trắc nghiệm về số hiệu nguyên tử, vị trí, tính chất và ứng dụng. Hãy thử đạt điểm tuyệt đối!</p></div>
+  <div class="quizLayout"><div class="glass quizIntro"><div class="iconBox">🧠</div><div class="kicker">QUIZ MODE</div><h3>Kiến thức nhỏ,<br>khám phá lớn.</h3><p>Mỗi câu có một đáp án đúng. Sau khi chọn, bạn sẽ nhận phản hồi giải thích ngắn gọn.</p><div style="margin-top:22px;border-top:1px solid var(--line);padding-top:15px"><div style="color:var(--muted);font-size:12px">ĐIỂM HIỆN TẠI</div><div class="score" id="sideScore" style="font-size:32px">0 / 8</div></div><button class="btn" id="restartQuiz" style="margin-top:16px">↻ Chơi lại từ đầu</button></div>
+  <div class="glass quizBox"><div class="quizTop"><span id="qCount">CÂU 1 / 8</span><span id="qState">Chưa trả lời</span></div><div class="progress"><div id="qProgress"></div></div><div class="question" id="question">Đang tải câu hỏi…</div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="quizActions"><span class="score" id="liveScore">Điểm: 0</span><button class="btn primary" id="nextQuestion" disabled>Câu tiếp theo →</button></div></div></div>
+</div></section>
+
+<section id="duan"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">05 / Về dự án</div><h2>Từ kiến thức đến câu chuyện</h2></div><p>Dự án học tập Hóa học 10 giúp kết nối kiến thức trong sách với vật liệu, sức khỏe, môi trường và công nghệ trong đời sống.</p></div>
+  <div class="aboutGrid"><div class="glass aboutBox"><div class="iconBox">🎯</div><h3>Mục tiêu dự án</h3><ul><li>Nhận biết cấu trúc và ý nghĩa của bảng tuần hoàn.</li><li>Liên hệ vị trí, cấu hình electron, tính chất và ứng dụng của nguyên tố.</li><li>Rèn kỹ năng tìm kiếm thông tin, thiết kế số, làm việc nhóm và thuyết trình.</li><li>Trình bày kiến thức khoa học rõ ràng, trực quan và có căn cứ.</li></ul></div><div class="glass aboutBox"><div class="iconBox">🧪</div><h3>Sản phẩm dự kiến</h3><ul><li>Bảng tuần hoàn điện tử có thể bấm chọn nguyên tố.</li><li>Hồ sơ chuyên sâu cho ít nhất 6 nguyên tố.</li><li>Bộ câu hỏi tương tác để ôn tập.</li><li>Báo cáo dự án 4–6 trang và phần thuyết trình của nhóm.</li></ul><p><b style="color:var(--text)">Thông điệp:</b> Bảng tuần hoàn không chỉ là bảng tra cứu — đó là bản đồ giúp ta giải thích thế giới vật chất.</p></div></div>
+</div></section>
+
+<section id="qr"><div class="wrap">
+  <div class="sectionHead"><div><div class="kicker">06 / Chia sẻ sản phẩm</div><h2>Tạo mã QR cho website</h2></div><p>Sau khi đưa website lên Internet, tạo mã QR để giáo viên và các bạn quét bằng điện thoại và mở sản phẩm ngay.</p></div>
+  <div class="qrGrid"><div class="glass aboutBox"><div class="steps">
+    <div class="step"><div class="stepNo">1</div><div><h4>Đưa website lên mạng</h4><p>Đăng tệp HTML lên một dịch vụ lưu trữ website như GitHub Pages hoặc Netlify. Sau khi xuất bản, bạn sẽ nhận được một đường link công khai.</p></div></div>
+    <div class="step"><div class="stepNo">2</div><div><h4>Sao chép đường link</h4><p>Hãy dùng link website đã xuất bản, không dùng đường dẫn tệp nằm trong điện thoại hoặc máy tính.</p></div></div>
+    <div class="step"><div class="stepNo">3</div><div><h4>Tạo và kiểm tra QR</h4><p>Dán link vào ô bên cạnh, tạo mã QR rồi dùng một điện thoại khác quét thử trước khi in hoặc nộp bài.</p></div></div>
+  </div></div><div class="glass qrPreview"><div class="qrPlaceholder" id="qrPlaceholder">▦</div><img id="qrImage" alt="Mã QR dẫn tới website"><b>Tạo mã QR cho dự án</b><p>Nhập đường link website đã xuất bản</p><input id="qrUrl" class="qrInput" type="url" placeholder="https://ten-website-cua-ban..." aria-label="Đường link website"><button class="btn primary" id="makeQR" style="width:100%">Tạo mã QR ↗</button><button class="btn" id="downloadQR" style="width:100%;margin-top:8px" disabled>Tải ảnh QR</button><p id="qrNote">Cần có kết nối Internet để tạo mã QR.</p></div></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footerIn"><div><b style="color:var(--text)">NGUYÊN TỐ & CUỘC SỐNG</b><br>Dự án học tập · Hóa học 10</div><div>Học để hiểu · Hiểu để kết nối · Kết nối với cuộc sống</div><div>© Nhóm dự án — Phiên bản học tập</div></div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const rawElements = [
+  {n:1,s:'H',name:'Hydrogen',mass:'1.008',type:'nonmetal',period:1,group:1,conf:'1s¹',state:'Khí',prop:'Khí không màu, nhẹ nhất trong các nguyên tố; dễ cháy.',use:'Có thể dùng làm nguyên liệu trong công nghiệp hóa học và được nghiên cứu làm nhiên liệu.',why:'Khối lượng nguyên tử nhỏ và có thể tham gia phản ứng hóa học giải phóng năng lượng.',profile:true},
+  {n:2,s:'He',name:'Helium',mass:'4.003',type:'noble',period:1,group:18,conf:'1s²',state:'Khí',prop:'Khí hiếm, rất ít phản ứng trong điều kiện thường.',use:'Bơm bóng bay chuyên dụng và dùng làm khí bảo vệ trong một số quy trình.',why:'Heli nhẹ và có tính trơ hóa học tương đối cao.'},
+  {n:3,s:'Li',name:'Lithium',mass:'6.94',type:'metal',period:2,group:1,conf:'1s² 2s¹',state:'Rắn',prop:'Kim loại kiềm mềm, nhẹ và có tính phản ứng mạnh.',use:'Là thành phần quan trọng trong nhiều loại pin sạc.',why:'Ion liti có thể di chuyển giữa các điện cực trong quá trình sạc và xả pin.'},
+  {n:4,s:'Be',name:'Berilium',mass:'9.012',type:'metal',period:2,group:2,conf:'1s² 2s²',state:'Rắn',prop:'Kim loại nhẹ, cứng; bụi và hợp chất có thể gây độc.',use:'Một số hợp kim chuyên dụng trong hàng không và kỹ thuật.',why:'Một số hợp kim của berili có độ cứng và độ ổn định cao. Không tự tiếp xúc hoặc thí nghiệm với berili.'},
+  {n:5,s:'B',name:'Boron',mass:'10.81',type:'metalloid',period:2,group:13,conf:'1s² 2s² 2p¹',state:'Rắn',prop:'Á kim; một số hợp chất có độ bền nhiệt tốt.',use:'Hợp chất borosilicat được dùng làm thủy tinh chịu nhiệt.',why:'Cấu trúc của thủy tinh borosilicat giúp vật liệu chịu thay đổi nhiệt độ tốt hơn nhiều loại thủy tinh thông thường.'},
+  {n:6,s:'C',name:'Carbon',mass:'12.011',type:'nonmetal',period:2,group:14,conf:'1s² 2s² 2p²',state:'Rắn',prop:'Có nhiều dạng thù hình như kim cương, than chì; tạo được nhiều hợp chất.',use:'Than chì dùng làm ruột bút chì; vật liệu cacbon dùng trong nhiều ngành.',why:'Than chì có cấu trúc lớp, các lớp dễ trượt lên nhau nên để lại vệt trên giấy.',profile:true},
+  {n:7,s:'N',name:'Nitrogen',mass:'14.007',type:'nonmetal',period:2,group:15,conf:'1s² 2s² 2p³',state:'Khí',prop:'Khí không màu, chiếm phần lớn thể tích không khí; phân tử N₂ khá bền.',use:'Sản xuất amoniac và phân bón chứa nitơ.',why:'Nitơ là nguyên tố cần thiết để cây tạo protein và các phân tử sinh học.',profile:true},
+  {n:8,s:'O',name:'Oxygen',mass:'15.999',type:'nonmetal',period:2,group:16,conf:'1s² 2s² 2p⁴',state:'Khí',prop:'Khí không màu, hỗ trợ sự cháy và cần thiết cho hô hấp hiếu khí.',use:'Y tế, hô hấp hỗ trợ theo chỉ định chuyên môn và các quy trình công nghiệp.',why:'Oxi tham gia vào quá trình hô hấp tế bào, giúp giải phóng năng lượng từ chất dinh dưỡng.',profile:true},
+  {n:9,s:'F',name:'Fluorine',mass:'18.998',type:'nonmetal',period:2,group:17,conf:'1s² 2s² 2p⁵',state:'Khí',prop:'Phi kim rất hoạt động; flo nguyên chất cực kỳ nguy hiểm.',use:'Một số hợp chất chứa flo được dùng trong kem đánh răng với nồng độ phù hợp.',why:'Ion florua có thể hỗ trợ làm bền men răng. Không tiếp xúc với flo nguyên chất.'},
+  {n:10,s:'Ne',name:'Neon',mass:'20.180',type:'noble',period:2,group:18,conf:'1s² 2s² 2p⁶',state:'Khí',prop:'Khí hiếm, ít phản ứng; phát sáng đặc trưng trong ống phóng điện.',use:'Đèn quảng cáo và đèn báo chuyên dụng.',why:'Khi bị kích thích bởi dòng điện, nguyên tử neon phát ra ánh sáng đặc trưng.'},
+  {n:11,s:'Na',name:'Sodium',mass:'22.990',type:'metal',period:3,group:1,conf:'1s² 2s² 2p⁶ 3s¹',state:'Rắn',prop:'Kim loại kiềm mềm, phản ứng mạnh với nước; không tồn tại tự do phổ biến trong tự nhiên.',use:'Đèn Sodium và các hợp chất Sodium trong công nghiệp, thực phẩm.',why:'Một số hợp chất Sodium có tính chất hữu ích riêng; muối ăn là Sodium clorua, không phải Sodium kim loại.'},
+  {n:12,s:'Mg',name:'Magnesium',mass:'24.305',type:'metal',period:3,group:2,conf:'1s² 2s² 2p⁶ 3s²',state:'Rắn',prop:'Kim loại nhẹ; cháy tạo ánh sáng trắng mạnh.',use:'Hợp kim nhẹ trong phương tiện và thiết bị; hợp chất Magnesium có nhiều ứng dụng.',why:'Khối lượng riêng thấp giúp hợp kim chứa Magnesium giảm khối lượng sản phẩm.'},
+  {n:13,s:'Al',name:'Aluminium',mass:'26.982',type:'metal',period:3,group:13,conf:'1s² 2s² 2p⁶ 3s² 3p¹',state:'Rắn',prop:'Kim loại nhẹ, dẫn điện và dẫn nhiệt; có lớp oxit bảo vệ bề mặt.',use:'Lon nước, khung cửa, dây dẫn và nhiều chi tiết kỹ thuật.',why:'Nhôm nhẹ, dễ gia công và lớp oxit làm chậm sự ăn mòn trong nhiều môi trường.',profile:true},
+  {n:14,s:'Si',name:'Silicon',mass:'28.085',type:'metalloid',period:3,group:14,conf:'1s² 2s² 2p⁶ 3s² 3p²',state:'Rắn',prop:'Á kim; tính dẫn điện phụ thuộc điều kiện và cách pha tạp.',use:'Chế tạo linh kiện bán dẫn và sản xuất thủy tinh qua hợp chất silic.',why:'Silic có tính chất bán dẫn có thể điều khiển, rất quan trọng trong vi mạch.',profile:true},
+  {n:15,s:'P',name:'Phosphorus',mass:'30.974',type:'nonmetal',period:3,group:15,conf:'1s² 2s² 2p⁶ 3s² 3p³',state:'Rắn',prop:'Phi kim có nhiều dạng thù hình; là nguyên tố thiết yếu của sinh vật.',use:'Sản xuất phân bón chứa photpho.',why:'Photpho tham gia cấu tạo ADN, ATP và màng tế bào; cây cần photpho để phát triển.',profile:true},
+  {n:16,s:'S',name:'Sulfur',mass:'32.06',type:'nonmetal',period:3,group:16,conf:'1s² 2s² 2p⁶ 3s² 3p⁴',state:'Rắn',prop:'Phi kim màu vàng; tạo nhiều hợp chất quan trọng.',use:'Sản xuất axit sulfuric và một số vật liệu công nghiệp.',why:'Axit sulfuric là hóa chất cơ bản được sử dụng trong nhiều quy trình công nghiệp.'},
+  {n:17,s:'Cl',name:'Chlorine',mass:'35.45',type:'nonmetal',period:3,group:17,conf:'1s² 2s² 2p⁶ 3s² 3p⁵',state:'Khí',prop:'Phi kim hoạt động; khí clo độc và gây kích ứng.',use:'Các hợp chất chứa clo được sử dụng để khử trùng nước đúng quy trình.',why:'Một số hợp chất clo có thể bất hoạt nhiều vi sinh vật. Không tự trộn hóa chất tẩy rửa.'},
+  {n:18,s:'Ar',name:'Argon',mass:'39.948',type:'noble',period:3,group:18,conf:'1s² 2s² 2p⁶ 3s² 3p⁶',state:'Khí',prop:'Khí hiếm, trơ trong nhiều điều kiện thông thường.',use:'Khí bảo vệ trong hàn và sản xuất bóng đèn.',why:'Khí trơ giúp bảo vệ các mối hàn và dây tóc bóng đèn khỏi bị oxi hóa.'}
+];
+
+const periodicEl = document.getElementById('periodic');
+const searchEl = document.getElementById('searchEl');
+const filterEl = document.getElementById('filterEl');
+const resetEl = document.getElementById('resetEl');
+const elementDetail = document.getElementById('elementDetail');
+
+// Render bảng tuần hoàn theo chuẩn lưới 18 cột (3 chu kì)
+function renderPeriodicTable(filterQuery = '', filterType = 'all') {
+  periodicEl.innerHTML = '';
+  for (let p = 1; p <= 3; p++) {
+    for (let g = 1; g <= 18; g++) {
+      const el = rawElements.find(item => item.period === p && item.group === g);
+      const div = document.createElement('div');
+      
+      if (el) {
+        const matchQ = !filterQuery || el.name.toLowerCase().includes(filterQuery) || el.s.toLowerCase().includes(filterQuery) || el.n.toString() === filterQuery;
+        const matchF = filterType === 'all' || el.type === filterType;
+        
+        div.className = `el ${el.type}`;
+        if (!matchQ || !matchF) {
+          div.style.opacity = '0.25';
+          div.style.pointerEvents = 'none';
+        } else {
+          div.style.opacity = '1';
+          div.style.pointerEvents = 'auto';
+        }
+        
+        div.tabIndex = 0;
+        div.innerHTML = `
+          <div class="num">${el.n}</div>
+          <div class="sym">${el.s}</div>
+          <div class="mass">${el.mass}</div>
+        `;
+        div.addEventListener('click', () => selectElement(el));
+        div.addEventListener('keypress', (e) => { if(e.key === 'Enter') selectElement(el); });
+      } else {
+        // Ô trống (không có nguyên tố ở trên) -> làm tối đi và vô hiệu hóa
+        div.className = 'el empty';
+        div.innerHTML = `
+          <div class="num"></div>
+          <div class="sym"></div>
+          <div class="mass"></div>
+        `;
+      }
+      periodicEl.appendChild(div);
+    }
+  }
+}
+
+function selectElement(el) {
+  document.querySelectorAll('.el').forEach(e => e.classList.remove('selected'));
+  const accentColor = el.type === 'noble' ? 'var(--violet)' : el.type === 'metalloid' ? 'var(--gold)' : el.type === 'metal' ? 'var(--blue)' : 'var(--cyan)';
+  
+  elementDetail.style.setProperty('--element-accent', accentColor);
+  elementDetail.innerHTML = `
+    <div class="detailSymbol" style="background:linear-gradient(145deg, ${el.type==='noble'?'#44356d,#24274e':el.type==='metalloid'?'#59451f,#302b2c':el.type==='metal'?'#1c4779,#183052':'#164e63,#1c4779'})">
+      <strong>${el.s}</strong>
+      <span>${el.name} (${el.n})</span>
+    </div>
+    <div class="detailContent">
+      <h3>${el.name} · Nguyên tố thứ ${el.n}</h3>
+      <p>${el.prop}</p>
+      <div class="chips">
+        <span class="chip">Nhóm: ${el.group}</span>
+        <span class="chip">Chu kì: ${el.period}</span>
+        <span class="chip">Trạng thái: ${el.state}</span>
+        <span class="chip">Nguyên tử khối: ${el.mass}</span>
+      </div>
+      <div class="detailFacts">
+        <div class="fact"><small>Cấu hình electron</small><b>${el.conf}</b></div>
+        <div class="fact"><small>Ứng dụng chính</small><b>${el.use}</b></div>
+      </div>
+    </div>
+  `;
+  elementDetail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Tìm kiếm & Lọc
+function handleFilter() {
+  const q = searchEl.value.toLowerCase().trim();
+  const f = filterEl.value;
+  renderPeriodicTable(q, f);
+}
+
+searchEl.addEventListener('input', handleFilter);
+filterEl.addEventListener('change', handleFilter);
+resetEl.addEventListener('click', () => {
+  searchEl.value = '';
+  filterEl.value = 'all';
+  renderPeriodicTable();
+});
+
+// Profiles
+const profileGrid = document.getElementById('profileGrid');
+const profileTitle = document.getElementById('profileTitle');
+const profileBody = document.getElementById('profileBody');
+
+function renderProfiles() {
+  profileGrid.innerHTML = '';
+  const selectedProfiles = rawElements.filter(e => [1, 6, 8, 13, 14, 15].includes(e.n));
+  selectedProfiles.forEach(el => {
+    const btn = document.createElement('button');
+    btn.className = 'profile';
+    btn.innerHTML = `
+      <div class="psym">${el.s}</div>
+      <div>
+        <b>${el.name}</b>
+        <small>Ô số ${el.n} · ${el.mass}</small>
+        <em>Xem hồ sơ chi tiết ↗</em>
+      </div>
+    `;
+    btn.addEventListener('click', () => {
+      profileTitle.textContent = `${el.name} (Ô số ${el.n})`;
+      profileBody.innerHTML = `
+        <p style="font-size:16px;color:var(--text);margin-bottom:12px"><b>Tính chất:</b> ${el.prop}</p>
+        <p style="margin-bottom:8px"><b>Cấu hình electron:</b> ${el.conf}</p>
+        <p style="margin-bottom:8px"><b>Ứng dụng thực tế:</b> ${el.use}</p>
+        <p style="margin-bottom:0"><b>Giải thích khoa học:</b> ${el.why}</p>
+      `;
+      document.getElementById('profileExpanded').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+    profileGrid.appendChild(btn);
+  });
+}
+
+// Quiz Data & Logic
+const quizData = [
+  { q: "Nguyên tố nào nhẹ nhất trong tất cả các nguyên tố hóa học và có số hiệu nguyên tử bằng 1?", opts: ["Helium (He)", "Hydrogen (H)", "Lithium (Li)", "Carbon (C)"], ans: 1, exp: "Hydrogen (H) có số hiệu nguyên tử Z = 1 và là nguyên tố nhẹ nhất trong tự nhiên." },
+  { q: "Nguyên tố nào chiếm phần lớn thể tích không khí và rất cần thiết để tổng hợp protein?", opts: ["Oxygen (O)", "Nitrogen (N)", "Carbon (C)", "Argon (Ar)"], ans: 1, exp: "Nitrogen (N₂) chiếm khoảng 78% thể tích không khí và đóng vai trò trọng yếu trong sinh học." },
+  { q: "Kim loại nào nhẹ nhất trong các kim loại, thường được dùng trong pin sạc hiện đại?", opts: ["Aluminium (Al)", "Sodium (Na)", "Lithium (Li)", "Magnesium (Mg)"], ans: 2, exp: "Lithium (Li) là kim loại kiềm nhẹ nhất và là thành phần cốt lõi của pin Li-ion." },
+  { q: "Nguyên tố nào đóng vai trò là vật liệu bán dẫn chủ lực trong công nghiệp điện tử và vi mạch?", opts: ["Silicon (Si)", "Carbon (C)", "Boron (B)", "Sulfur (S)"], ans: 0, exp: "Silicon (Si) là chất bán dẫn quan trọng nhất dùng để chế tạo chip và linh kiện điện tử." },
+  { q: "Kim loại nào phổ biến trong đời sống nhờ tính nhẹ, dẫn điện/nhiệt tốt và có lớp oxit bền bảo vệ bề mặt?", opts: ["Iron (Fe)", "Aluminium (Al)", "Copper (Cu)", "Zinc (Zn)"], ans: 1, exp: "Aluminium (Al) có khối lượng riêng nhỏ, bền vững trong không khí nhờ lớp màng oxit mỏng." },
+  { q: "Nguyên tố nào dưới đây thuộc nhóm khí hiếm (nhóm 18)?", opts: ["Chlorine (Cl)", "Neon (Ne)", "Phosphorus (P)", "Sodium (Na)"], ans: 1, exp: "Neon (Ne) là khí hiếm thuộc chu kì 2, nhóm 18 với lớp vỏ electron ngoài cùng bền vững." },
+  { q: "Hợp chất borosilicat chứa nguyên tố nào giúp thủy tinh có khả năng chịu nhiệt rất tốt?", opts: ["Beryllium (Be)", "Boron (B)", "Barium (Ba)", "Bromine (Br)"], ans: 1, exp: "Boron (B) tạo nên thủy tinh borosilicat chịu sốc nhiệt cao dùng trong dụng cụ thí nghiệm." },
+  { q: "Nguyên tố nào đóng vai trò cốt lõi trong hô hấp hiếu khí của sinh vật nhân thực?", opts: ["Oxygen (O)", "Nitrogen (N)", "Hydrogen (H)", "Carbon (C)"], ans: 0, exp: "Oxygen (O) tham gia vào chuỗi truyền electron trong hô hấp tế bào để tạo ra năng lượng (ATP)." }
+];
+
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+const qCount = document.getElementById('qCount');
+const qState = document.getElementById('qState');
+const qProgress = document.getElementById('qProgress');
+const questionEl = document.getElementById('question');
+const answersEl = document.getElementById('answers');
+const feedbackEl = document.getElementById('feedback');
+const nextBtn = document.getElementById('nextQuestion');
+const liveScore = document.getElementById('liveScore');
+const sideScore = document.getElementById('sideScore');
+
+function loadQuiz() {
+  answered = false;
+  const q = quizData[currentQ];
+  qCount.textContent = `CÂU ${currentQ + 1} / ${quizData.length}`;
+  qState.textContent = "Đang chờ trả lời";
+  qProgress.style.width = `${((currentQ) / quizData.length) * 100}%`;
+  questionEl.textContent = q.q;
+  feedbackEl.textContent = "";
+  nextBtn.disabled = true;
+  
+  answersEl.innerHTML = "";
+  q.opts.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => selectAnswer(idx));
+    answersEl.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx) {
+  if(answered) return;
+  answered = true;
+  const q = quizData[currentQ];
+  const buttons = answersEl.querySelectorAll('.answer');
+  
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if(i === q.ans) b.classList.add('correct');
+    else if(i === idx) b.classList.add('wrong');
+  });
+
+  if(idx === q.ans) {
+    score++;
+    feedbackEl.innerHTML = `<b style="color:var(--green)">Chính xác!</b> ${q.exp}`;
+    qState.textContent = "Đúng";
+  } else {
+    feedbackEl.innerHTML = `<b style="color:var(--pink)">Chưa chính xác.</b> ${q.exp}`;
+    qState.textContent = "Sai";
+  }
+
+  liveScore.textContent = `Điểm: ${score}`;
+  sideScore.textContent = `${score} / ${quizData.length}`;
+  nextBtn.disabled = false;
+  qProgress.style.width = `${((currentQ + 1) / quizData.length) * 100}%`;
+}
+
+nextBtn.addEventListener('click', () => {
+  currentQ++;
+  if(currentQ < quizData.length) {
+    loadQuiz();
+  } else {
+    qCount.textContent = "HOÀN TẤT";
+    qState.textContent = "Đã xong";
+    questionEl.textContent = `🎉 Bạn đã hoàn thành thử thách với số điểm ${score} / ${quizData.length}!`;
+    answersEl.innerHTML = `<p style="color:var(--cyan);font-weight:700">Tuyệt vời! Hãy tiếp tục khám phá bảng tuần hoàn hoặc nhấn nút chơi lại để thử sức lần nữa.</p>`;
+    feedbackEl.textContent = "";
+    nextBtn.disabled = true;
+  }
+});
+
+document.getElementById('restartQuiz').addEventListener('click', () => {
+  currentQ = 0;
+  score = 0;
+  loadQuiz();
+  liveScore.textContent = `Điểm: 0`;
+  sideScore.textContent = `0 / ${quizData.length}`;
+});
+
+// QR Code Generator
+const makeQRBtn = document.getElementById('makeQR');
+const qrUrlInput = document.getElementById('qrUrl');
+const qrImage = document.getElementById('qrImage');
+const qrPlaceholder = document.getElementById('qrPlaceholder');
+const downloadQRBtn = document.getElementById('downloadQR');
+const toast = document.getElementById('toast');
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2800);
+}
+
+makeQRBtn.addEventListener('click', () => {
+  const url = qrUrlInput.value.trim();
+  if(!url) {
+    showToast('⚠️ Vui lòng nhập đường link website!');
+    return;
+  }
+  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=${encodeURIComponent(url)}`;
+  qrImage.src = qrSrc;
+  qrImage.style.display = 'block';
+  qrPlaceholder.style.display = 'none';
+  downloadQRBtn.disabled = false;
+  showToast('✨ Đã tạo mã QR thành công!');
+});
+
+downloadQRBtn.addEventListener('click', () => {
+  const url = qrUrlInput.value.trim();
+  if(!url) return;
+  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(url)}`;
+  const a = document.createElement('a');
+  a.href = qrSrc;
+  a.download = 'ma-qr-du-an-hoa-10.png';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  showToast('📥 Đã tải xuống ảnh mã QR!');
+});
+
+// Mobile Nav Toggle
+const menuBtn = document.getElementById('menuBtn');
+const navlinks = document.getElementById('navlinks');
+
+menuBtn.addEventListener('click', () => {
+  navlinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.navlinks a').forEach(link => {
+  link.addEventListener('click', () => navlinks.classList.remove('open'));
+});
+
+// Initial load
+renderPeriodicTable();
+selectElement(rawElements[7]); // Chọn Oxygen mặc định
+renderProfiles();
+loadQuiz();
+</script>
+</body>
+</html>
